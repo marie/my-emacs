@@ -70,3 +70,14 @@
     (setq indent-tabs-mode nil)
 )
 (add-hook 'go-mode-hook 'tabs-to-spaces)
+
+;; keep backup files outside of the project
+(let ((backup-dir (concat user-emacs-directory "backup")))
+    (when (not (file-exists-p backup-dir))
+        (make-directory backup-dir t))
+    (setq backup-directory-alist `(("." . ,backup-dir))
+        backup-by-copying t
+        delete-old-versions t
+        version-control t
+        kept-new-versions 5
+        kept-old-versions 2))
