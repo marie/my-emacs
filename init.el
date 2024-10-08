@@ -21,6 +21,7 @@
     :config
     (neotree-toggle)
     (neotree-dir "~/Projects")
+    (neotree-hidden-file-toggle)
     (switch-to-buffer-other-window "*scratch*")
     (global-set-key [f8] 'neotree-toggle)
 )
